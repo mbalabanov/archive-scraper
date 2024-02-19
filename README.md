@@ -2,6 +2,8 @@
 
 This is a quick web scraper for the [Archive of Digital Art (ADA)](https://digitalartarchive.at). It is an example for the crawl and capture of a large amount of modestly complex content.
 
+Please find **more details** here: [Archiving an Archive](https://marincomics.com/archiving-an-archive.html)
+
 It's purpose is to crawl the archive and save the HTML content and the images. Additional components find the the related large versions of images and the PDF files and download them.
 The final component runs through all of the locally saved HTML files and extracts their relevant content to saves it in JSON format for further processing.
 
