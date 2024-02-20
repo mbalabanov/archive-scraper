@@ -70,7 +70,7 @@ Now that we have all the search page URLs, we need to read them from the JSON fi
 
 ## 3_crawl-content.js
 
-### Get all the page contents and reguler images (main web archive content scraper)
+### Get all the page contents and regular images (main web archive content scraper)
 
 Now we are ready to crawl the actual contents of the pages. This component takes a JSON list of URLs, scrapes the content of each page and saves it.
 
