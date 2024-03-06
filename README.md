@@ -82,7 +82,7 @@ Open the app with `node 3_crawl-content.js ARG1 ARG2` where the first argument i
 
 `node 3_crawl-content.js ./scrape/1_urls/page-urls/work-urls.json works`
 
-## 4_get-urls-of-large-images.js
+## 4_lg_img1_get-urls-of-large-images.js
 
 ### Large Images for Each Thumbnail
 
@@ -100,9 +100,9 @@ In the next component, the URLs are used to download the large images. **Please 
 
 As all the settings are predefined already to use the 'works' category, you simply need to launch the application with:
 
-`node 4_get-urls-of-large-images.js`
+`node 4_lg_img1_get-urls-of-large-images.js`
 
-## 5_download-large-images.js
+## 5_lg_img2_download-large-images.js
 
 ### Download the Large Image Files
 
@@ -116,7 +116,7 @@ The downloads can then be repeated for the failed files. Keep in mind that there
 
 Everything is set up to use the JSON file generated in component 4. You simply launch:
 
-`node 5_download-large-images.js`
+`node 5_lg_img2_download-large-images.js`
 
 ## 6_parse_offline_pages.js
 
@@ -144,12 +144,12 @@ The parser runs through the HTML and pulls the content from the divs with specif
 
 If you want to use this component for another website, you will have to adapt it to the structure of the pages on that website. The configuration of the class names is in component file 6_parse-offline-pages.js. The class names are defined in the variable `typeData` and listed by category name.
 
-## Additions
+## Bonus: pdf1_get_pdf_urls.js and pdf2_download.js
 
-The PDF scraper first needs to run through all of the HTML files in the Literature category and extract the URLs of the PDF files. Most Literature pages do not have PDF links, but the scraper needs to check all of them. The PDF scraper then saves the list of PDF URLs in the file `./scrape/1_urls/c_image_urls/literature_pdf_urls.json`. This file is then used by the PDF downloader to download the PDF files.
+The PDF scraper first needs to run through all of the HTML files in the Literature category and extract the URLs of the PDF files. To scrape the content for PDF URLs start `node  pdf1_get_pdf_urls.js`.  Most Literature pages do not have PDF links, but the scraper needs to check all of them. The PDF scraper then saves the list of PDF URLs in the file `./scrape/1_urls/c_image_urls/literature_pdf_urls.json`. This file is then used by the PDF downloader to download the PDF files.
 
 While the PDF URL scraper is running, make sure it is not interrupted. The JSON file it generates is not yet fully compliant. It is missing the opening an closing square brackets and has a comma at the end of every entry, including the last one. This is the reason why some IDEs will flag the file as incorrect if you look at it before the scraping has finished. Both the brackets and the trailing comma are fixed at the very end of the scrape.
 
-If you happen to interrupt the process, then you can fix the file yourself by simply inserting an opeing square bracket at the beginning, removing the last comma and adding the closing square bracket at the end.
+If you happen to interrupt the process, then you can fix the file yourself by simply inserting an opening square bracket at the beginning, removing the last comma and adding the closing square bracket at the end.
 
-Once the PDF URLs have been saved to the JSON file, you can run the PDF downloader.
+Once the PDF URLs have been saved to the JSON file, you can run the PDF downloader by entering `node pdf2_download.js`.
